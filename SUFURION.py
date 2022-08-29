@@ -55,7 +55,7 @@ def transaction():
 
 
     print(Fore.YELLOW + "> Gathering Transaction Data (Wait.. .)")
-    time.sleep(1)
+    time.sleep(3)
     print(Fore.GREEN + "[+] transaction : ", hash,)
     time.sleep(1)
     print(Fore.WHITE + "[+] gas fee = ", fee)
@@ -72,7 +72,7 @@ def transaction():
     time.sleep(1)
     print(Fore.GREEN + "[+] Successfully sent to wallet (Might take up to 24 hours)")
     time.sleep(1)
-    print(Fore.WHITE + "> Extracted 0.0101886 ETH|")
+    print(Fore.WHITE + "> Extracted",fee)
     input()
 
 
