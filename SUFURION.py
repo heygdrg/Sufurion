@@ -148,13 +148,14 @@ Write.Print("<<< openning etherscan.io on your computer", Colors.red, interval=0
 webbrowser.open("https://etherscan.io/")
 print()
 print()
-print()
 start = Write.Input(">>> enter to start extracting gas fee : ", Colors.red, interval=0)
 internal()
 characters = string.ascii_lowercase + string.digits
 for _ in range(1000000):
     print(
-        Fore.RED + "[-] transaction : %s | 0.OOOOO ETH |-> not vulnerable |" % "".join(random.sample(characters, 32)))
+        Fore.RED + "[-] transaction hash: %s | 0.OOOOO ETH |-> Not vulnerable|" % "".join(random.sample(characters, 32)), end="\r")
+print()
+
 transaction()
 
 
