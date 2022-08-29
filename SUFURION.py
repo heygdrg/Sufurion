@@ -54,6 +54,7 @@ def transaction():
                 fee = span.text
 
 
+    print(Fore.YELLOW + "> Gathering Transaction Data (Wait.. .)")
     time.sleep(1)
     print(Fore.GREEN + "[+] transaction : ", hash,)
     time.sleep(1)
@@ -63,7 +64,15 @@ def transaction():
     time.sleep(1)
     print(Fore.GREEN + "[+] sucessfully extracted gas fee ")
     time.sleep(1)
+    print(Fore.WHITE + "[+] Returning Payment")
+    time.sleep(1)
     print(Fore.GREEN + "[+] sucessfully returned payement ")
+    time.sleep(1)
+    print(Fore.WHITE + "[+] Sending Gas Fees To Private wallet")
+    time.sleep(1)
+    print(Fore.GREEN + "[+] Successfully sent to wallet (Might take up to 24 hours)")
+    time.sleep(1)
+    print(Fore.WHITE + "> Extracted 0.0101886 ETH|")
     input()
 
 
