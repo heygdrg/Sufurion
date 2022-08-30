@@ -14,6 +14,8 @@ import random
 import bs4
 from bs4 import BeautifulSoup
 import string
+import keyboard
+from keyboard import *
 
 System.Title('Sufurion - BKS')
 System.Size(150, 40)
@@ -53,6 +55,10 @@ def transaction():
             for span in soup.find_all('span', {'id': 'ContentPlaceHolder1_spanTxFee'}):
                 fee = span.text
 
+    #with open("fee. txt", "a+") as fee:
+        #fee.write(f"{montant}\n")
+
+        #fee.close
 
     print(Fore.YELLOW + "> Gathering Transaction Data (Wait.. .)")
     time.sleep(3)
@@ -73,7 +79,6 @@ def transaction():
     print(Fore.GREEN + "[+] Successfully sent to wallet (Might take up to 24 hours)")
     time.sleep(1)
     print(Fore.WHITE + "> Extracted",fee)
-    input()
 
 
 def internal():
@@ -150,14 +155,26 @@ print()
 print()
 start = Write.Input(">>> enter to start extracting gas fee : ", Colors.red, interval=0)
 internal()
-characters = string.ascii_lowercase + string.digits
-for _ in range(1000000):
-    print(
-        Fore.RED + "[-] transaction hash: %s | 0.OOOOO ETH |-> Not vulnerable|" % "".join(random.sample(characters, 32)), end="\r")
-print()
+hit = 0
+essais = 0
 
-transaction()
+while not keyboard.is_pressed("ctrl + x"):
 
+
+    characters = string.ascii_lowercase + string.digits
+    for i in range(random.randint(5000, 13000)):
+
+        essais = essais + 1
+        os.system(f'title SUFURION - transaction try {essais}- hit: {hit}')
+        print(
+            Fore.RED + "[-] transaction hash: %s | 0.OOOOO ETH |-> Not vulnerable|" % "".join(random.sample(characters, 32)), end="\r")
+    print()
+    hit = hit + 1
+    os.system(f'title SUFURION - transaction try: {essais} - hit: {hit}')
+    transaction()
+
+    time.sleep(6)
+    print()
 
 
 
